@@ -5,8 +5,8 @@ set -e
 if [ "$1" = 'cloudbrowser' ]; then
 
 	if [ "$CLOUDBROWSER_ADDR" == "" ]; then
-   		if [ -n "$CLOUDBROWSER_PORT_8080_TCP_PORT" ]; then
-   	     	CLOUDBROWSER_ADDR="${CLOUDBROWSER_PORT_8080_TCP_ADDR}:${CLOUDBROWSER_PORT_8080_TCP_PORT}"
+   		if [ -n "$CLOUDBROWSER_PORT_8009_TCP_PORT" ]; then
+   	     	CLOUDBROWSER_ADDR="${CLOUDBROWSER_PORT_8009_TCP_ADDR}:${CLOUDBROWSER_PORT_8009_TCP_PORT}"
     	fi
 	fi
 
