@@ -23,11 +23,11 @@ RUN dpkg -i /tmp/irods-dbplugin.deb
 
 RUN mkdir /opt/irods
 
-COPY FILES.icat/*.sh /opt/irods/
+COPY *.sh /opt/irods/
 RUN chmod a+x /opt/irods/*.sh
 
-COPY FILES.icat/irods_setup.pl /var/lib/irods/iRODS/scripts/perl/irods_setup.pl
-COPY FILES.icat/entrypoint.sh /
+COPY irods_setup.pl /var/lib/irods/iRODS/scripts/perl/irods_setup.pl
+COPY entrypoint.sh /
 
 EXPOSE 1247
 #EXPOSE 1248

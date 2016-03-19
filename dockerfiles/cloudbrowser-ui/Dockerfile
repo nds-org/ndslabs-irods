@@ -17,9 +17,9 @@ RUN cd /tmp \
   && unzip irods-cloud-frontend.zip \
   && mv irods-cloud-frontend/* /var/www/html
 
-COPY FILES.cloudbrowser-ui/globals.js /var/www/html/app/components
-COPY FILES.cloudbrowser-ui/default.conf /etc/apache2/sites-available/000-default.conf
-COPY FILES.cloudbrowser-ui/entrypoint.sh /
+COPY globals.js /var/www/html/app/components
+COPY default.conf /etc/apache2/sites-available/000-default.conf
+COPY entrypoint.sh /
 
 EXPOSE 80
 CMD ["/entrypoint.sh", "cloudbrowser"]
