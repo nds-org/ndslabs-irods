@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 set -e
 
 if [ "$1" = 'icat' ]; then
@@ -23,7 +21,6 @@ if [ "$1" = 'icat' ]; then
 	# set up iRODS
 	/opt/irods/config.sh /opt/irods/setup_responses
 
-	#change irods user's irodsEnv file to point to localhost, since it was configured with a transient Docker container's $
 	#sed -i 's/^irodsHost.*/irodsHost localhost/' /var/lib/irods/.irods/.irodsEnv
 	sed -i 's/"irodsHost:".*/"irods_hods": "localhost"/' /var/lib/irods/.irods/irods_environment.json
 
