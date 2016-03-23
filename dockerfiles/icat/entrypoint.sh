@@ -24,8 +24,25 @@ if [ "$1" = 'icat' ]; then
 	#sed -i 's/^irodsHost.*/irodsHost localhost/' /var/lib/irods/.irods/.irodsEnv
 	sed -i 's/"irodsHost:".*/"irods_hods": "localhost"/' /var/lib/irods/.irods/irods_environment.json
 
+	sed -i "s/HOSTNAME/$HOSTNAME/" /etc/supervisor/conf.d/supervisord.conf
+	sed -i "s/RODS_ZONE/$RODS_ZONE/" /etc/supervisor/conf.d/supervisord.conf
+
+	RODS_PASSWORD=`sed '14q;d' /opt/irods/setup_responses`
+
+	# Initialize the rods user environemtn
+	mkdir -p ~/.irods
+cat << EOF > ~/.irods/irods_environment.json
+{
+   	"irods_host": "localhost",
+   	"irods_port": 1247,
+   	"irods_user_name": "rods",
+   	"irods_zone_name": "$RODS_ZONE"
+}
+EOF
+	iinit $RODS_PASSWORD
+
 	# this script must end with a persistent foreground process
-	sleep infinity
+	/usr/bin/supervisord
 
 else
     exec "$@"
