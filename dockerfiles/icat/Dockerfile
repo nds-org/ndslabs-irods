@@ -32,6 +32,7 @@ COPY *.sh /opt/irods/
 RUN chmod a+x /opt/irods/*.sh
 
 VOLUME /var/lib/irods/iRODS/Vault
+VOLUME /var/lib/postgresql/9.3/main
 
 COPY irods_setup.pl /var/lib/irods/iRODS/scripts/perl/irods_setup.pl
 COPY entrypoint.sh /
