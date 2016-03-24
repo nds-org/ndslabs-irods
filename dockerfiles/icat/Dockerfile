@@ -36,6 +36,7 @@ VOLUME /var/lib/postgresql/9.3/main
 
 COPY irods_setup.pl /var/lib/irods/iRODS/scripts/perl/irods_setup.pl
 COPY entrypoint.sh /
+COPY Dockerfile /
 
 EXPOSE 1247
 EXPOSE 8080
