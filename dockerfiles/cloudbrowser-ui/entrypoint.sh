@@ -13,8 +13,8 @@ if [ "$1" = 'cloudbrowser' ]; then
   sed -i 's/CLOUDBROWSER_BACKEND/'"${CLOUDBROWSER_ADDR}"'/' /etc/apache2/sites-available/000-default.conf
 
   echo "Starting Apache2"
-  service apache2 start
-  sleep infinity
+
+  /usr/sbin/apache2ctl -D FOREGROUND
   
 else
     exec "$@"
