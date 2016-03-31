@@ -1,33 +1,16 @@
-## iRODS 4.1.3
+# iRODS 4.1.3
 
-This is a preliminary implementation of the [iRods](https://docs.irods.org/4.1.3/manual/installation/) iCAT and Cloudbrowser services for NDS Labs. The Docker images are based on the official images [RENCI](https://github.com/irods/contrib/tree/master/irods-docker), with changes required to run in NDS Labs.
+Resources to deploy iRODS iCAT in [NDS Labs](https://github.com/nds-org/ndslabs).
 
-### NDS Labs Docker images
+## Dockerfiles
+A set of images used to deploy iCAT and Cloudbrowser in [NDS Labs](https://github.com/nds-org/ndslabs).
 
-The images should be available from the [NDS Labs Dockerhub account](https://hub.docker.com/u/ndslabs/)
-
-### Changes
-
-* iCAT: Installs 4.1.3 with the NDS Labs entrypoint.sh script
-* Cloudbrowser: Installs the 1.0 Cloudbrowser REST API server 
-* Cloudbrowser-UI: Installs the 1.0 Cloudbrowser Angular UI
+These images are referenced by the [NDS Labs Service Catalog](https://github.com/nds-org/ndslabs-specs).
 
 
-### Starting iRODS services under docker
+## Documentation
+Documentation for iRODS can be found here: http://irods.org/documentation/
 
-```
-docker run --name icat  --env=RODS_PASSWORD=test --env RODS_ZONE=myzone -p 1247:1247 -d ndslabs/irods-icat:4.1.3
-```
-
-```
-docker run --env IRODS_ZONE=myzone --name cloudbrowser -p 8009:8009 --link icat:icat -d ndslabs/cloudbrowser:latest
-```
-
-```
-docker run --link cloudbrowser:cloudbrowser -p 80:80  -d ndslabs/cloudbrowser-ui:latest
-```
-
-### Simple test case
-* Open <host>:80 in your browser (Cloudbrowser UI)
-* Login using the "rods" user with the specified password
-* You should see the CloudBrowser interface with the default "myzone" zone displayed
+## See also
+* https://github.com/nds-org/ndslabs
+* https://github.com/nds-org/ndslabs-specs
