@@ -1,4 +1,7 @@
 FROM ubuntu:14.04
+# Based on original image from 
+# https://github.com/irods/contrib/blob/master/irods-docker/icat/Dockerfile
+# MAINTAINER danb@renci.org
 MAINTAINER willis8@illinois.edu
 
 RUN apt-get update ; apt-get upgrade -y
