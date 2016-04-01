@@ -14,3 +14,5 @@ Documentation for iRODS can be found here: http://irods.org/documentation/
 ## See also
 * https://github.com/nds-org/ndslabs
 * https://github.com/nds-org/ndslabs-specs
+* https://github.com/nds-org/ndslabs-dataverse
+* https://github.com/nds-org/ndslabs-irods-federate
