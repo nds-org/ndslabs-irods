@@ -12,8 +12,11 @@ if [ "$1" = 'cloudbrowser' ]; then
     if [ -n "$IRODS_ZONE" ]; then
         echo "beconf.login.preset.zone='"$IRODS_ZONE"'" >> /etc/irods-cloud-backend-config.groovy
         echo "beconf.login.preset.auth.type='STANDARD'" >> /etc/irods-cloud-backend-config.groovy
-        echo "beconf.login.preset.enabled=true" >> /etc/irods-cloud-backend-config.groovy
     fi
+
+	if [ -n "$ICAT_PORT_1247_TCP_ADDR" ] && [ -n "$IRODS_ZONE" ]; then
+        echo "beconf.login.preset.enabled=true" >> /etc/irods-cloud-backend-config.groovy
+	fi
 
     /usr/share/tomcat7/bin/catalina.sh run
 

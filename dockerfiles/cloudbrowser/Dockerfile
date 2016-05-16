@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER willis8@illinois.edu
 
-RUN apt-get update ; apt-get upgrade -y
+RUN apt-get update -y ; apt-get upgrade -y
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
