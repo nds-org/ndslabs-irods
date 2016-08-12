@@ -25,7 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y `dpkg -I /tmp/irods-dbplug
 RUN dpkg -i /tmp/irods-dbplugin.deb
 
 
-RUN mkdir /opt/ndslabs && wget https://github.com/nds-org/ndslabs-irods-federate/releases/download/v0.1poc/ndslabs-irods-federate-linux-amd64 -O /opt/ndslabs/ndslabs-irods-federate && chmod +x /opt/ndslabs/ndslabs-irods-federate
+RUN mkdir /opt/ndslabs && wget https://github.com/nds-org/ndslabs-irods-federate/releases/download/v1.0.1-alpha/ndslabs-irods-federate-linux-amd64 -O /opt/ndslabs/ndslabs-irods-federate && chmod +x /opt/ndslabs/ndslabs-irods-federate
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
